@@ -56,8 +56,8 @@ class PaperReader:
             Paper: The paper.
         """
         text = self.markdown_extractor.extract_markdown(paper_path)
-        keywords = self.keyword_extractor.extract_keywords(text)
         summary = self.summarizer.summarize(text)
+        keywords = self.keyword_extractor.extract_keywords(summary)
         paper_info: dict = self.extract_paper_info_chain.invoke({"text": text[:1000]})
         abstract = self.extract_abstract_chain.invoke({"text": text[:20000]})
 
