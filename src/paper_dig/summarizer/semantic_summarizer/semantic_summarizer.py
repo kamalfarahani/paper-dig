@@ -3,7 +3,7 @@ from langchain_core.embeddings import Embeddings
 from langchain_core.language_models import BaseChatModel
 from langchain_experimental.text_splitter import SemanticChunker
 
-from paper_tools.summarizer import AbstractSummarizer
+from paper_dig.summarizer import AbstractSummarizer
 
 from .prompts import summarize_prompt, summarize_aggregate_prompt
 

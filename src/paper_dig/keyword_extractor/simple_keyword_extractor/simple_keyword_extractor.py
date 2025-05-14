@@ -1,7 +1,7 @@
 from langchain_core.language_models import BaseChatModel
 from langchain_core.output_parsers import JsonOutputParser
 
-from paper_tools.keyword_extractor import AbstractKeywordExtractor
+from paper_dig.keyword_extractor import AbstractKeywordExtractor
 
 from .prompts import extract_keywords_prompt
 

@@ -1,9 +1,9 @@
-# Paper Tools
+# Paper Dig
 
-Paper Tools is a collection of tools for processing and analyzing papers.
+Paper Dig is a collection of tools for processing and analyzing papers.
 
 ## Installation
 
 ```bash
-pip install paper-tools
+pip install paper-dig
 ```
