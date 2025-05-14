@@ -17,14 +17,25 @@ from paper_tools.paper_reader.prompts import (
 class PaperReader:
     def __init__(
         self,
-        paper_path: Path,
         llm: BaseChatModel,
         markdown_extractor: AbstractMarkdownExtractor,
         summarizer: AbstractSummarizer,
         keyword_extractor: AbstractKeywordExtractor,
     ):
+        """
+        Initialize the paper reader.
+
+        Args:
+            paper_path: The path to the paper.
+            llm: The language model to use for paper reading.
+            markdown_extractor: The markdown extractor to use for extracting markdown from the paper.
+            summarizer: The summarizer to use for summarizing the paper.
+            keyword_extractor: The keyword extractor to use for extracting keywords from the paper.
+
+        Returns:
+            None
+        """
         self.llm = llm
-        self.paper_path = paper_path
         self.markdown_extractor = markdown_extractor
         self.summarizer = summarizer
         self.keyword_extractor = keyword_extractor
@@ -35,8 +46,17 @@ class PaperReader:
             extract_abstract_prompt | self.llm | StrOutputParser()
         )
 
-    def read(self) -> Paper:
-        text = self.markdown_extractor.extract_markdown(self.paper_path)
+    def read(self, paper_path: Path) -> Paper:
+        """
+        Read the paper.
+
+        Args:
+            paper_path: The path to the paper.
+
+        Returns:
+            Paper: The paper.
+        """
+        text = self.markdown_extractor.extract_markdown(paper_path)
         keywords = self.keyword_extractor.extract_keywords(text)
         summary = self.summarizer.summarize(text)
         paper_info: dict = self.extract_paper_info_chain.invoke({"text": text[:1000]})
