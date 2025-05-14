@@ -7,11 +7,21 @@ authors = [
     { name = "Kamal", email = "kamal.farahani90@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "langchain>=0.3.25",
+    "langchain-experimental>=0.3.4",
+    "pydantic>=2.11.4",
+    "requests>=2.32.3",
+    "scikit-learn>=1.6.1",
+]
 
-[project.scripts]
-paper-tools = "paper_tools:main"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "ipython>=9.2.0",
+    "langchain[openai]>=0.3.25",
+]
