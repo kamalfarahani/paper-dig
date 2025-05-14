@@ -3,12 +3,11 @@ from pathlib import Path
 from langchain_core.language_models import BaseChatModel
 from langchain_core.output_parsers import JsonOutputParser, StrOutputParser
 
-from paper_tools.paper import Paper
-from paper_tools.summarizer import AbstractSummarizer
-from paper_tools.keyword_extractor import AbstractKeywordExtractor
-from paper_tools.markdown_extractor import AbstractMarkdownExtractor
-
-from paper_tools.paper_reader.prompts import (
+from paper_dig.paper import Paper
+from paper_dig.summarizer import AbstractSummarizer
+from paper_dig.keyword_extractor import AbstractKeywordExtractor
+from paper_dig.markdown_extractor import AbstractMarkdownExtractor
+from paper_dig.paper_reader.prompts import (
     extract_paper_info_prompt,
     extract_abstract_prompt,
 )

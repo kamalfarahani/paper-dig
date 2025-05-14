@@ -1,7 +1,7 @@
 [project]
-name = "paper-tools"
+name = "paper-dig"
 version = "0.1.0"
-description = "Paper Tools is a collection of tools for processing and analyzing papers."
+description = "Paper Dig is a collection of tools for processing and analyzing papers."
 readme = "README.md"
 authors = [
     { name = "Kamal", email = "kamal.farahani90@gmail.com" }
