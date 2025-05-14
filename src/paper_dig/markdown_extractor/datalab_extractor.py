@@ -3,7 +3,7 @@ import requests
 
 from pathlib import Path
 
-from paper_ai.markdown_extractor import AbstractMarkdownExtractor
+from paper_dig.markdown_extractor import AbstractMarkdownExtractor
 
 
 class DatalabMarkdownExtractor(AbstractMarkdownExtractor):
