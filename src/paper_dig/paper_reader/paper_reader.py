@@ -61,10 +61,14 @@ class PaperReader:
         paper_info: dict = self.extract_paper_info_chain.invoke({"text": text[:1000]})
         abstract = self.extract_abstract_chain.invoke({"text": text[:20000]})
 
+        paper_info["title"] = paper_info.get("title") or ""
+        paper_info["authors"] = paper_info.get("authors") or []
+        paper_info["year"] = paper_info.get("year")
+
         return Paper(
-            title=paper_info.get("title", ""),
-            authors=paper_info.get("authors", []),
-            year=paper_info.get("year", None),
+            title=paper_info["title"],
+            authors=paper_info["authors"],
+            year=paper_info["year"],
             abstract=abstract,
             keywords=keywords,
             summary=summary,
